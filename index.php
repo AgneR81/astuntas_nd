@@ -246,6 +246,84 @@ $arr8 = recursive($rand);
  
 print_r(suma($arr8));
 
+echo '<pre>' ;
+ echo '9. Sugeneruokite masyvą iš trijų elementų, kurie yra atsitiktiniai skaičiai
+ nuo 1 iki 33. Jeigu tarp trijų paskutinių elementų yra nors vienas ne
+ pirminis skaičius, prie masyvo pridėkite dar vieną elementą- atsitiktinį
+ skaičių nuo 1 iki 33. Vėl patikrinkite pradinę sąlygą ir jeigu reikia
+ pridėkite dar vieną elementą. Kartokite, kol sąlyga nereikalaus pridėti
+ elemento.
+ ';
+ echo '</pre>';
+
+$arr9 = [];
+for ($i=0; $i < 3; $i++) { 
+    $arr9[] = rand(1, 33);
+}
+echo '<pre>' ;
+ print_r($arr9);
+ echo '</pre>';
+ function primeCheck($int){     // pirminiu skaiciu tikrinimas
+    if ($int == 1) 
+    return 0; 
+    for ($i = 2; $i <= $int/2; $i++){ 
+        if ($int % $i == 0) 
+            return 0; 
+    } 
+    return 1; 
+} 
+  while (
+      !primeCheck($arr9[count($arr9)-1]) ||
+      !primeCheck($arr9[count($arr9)-2]) ||
+      !primeCheck($arr9[count($arr9)-3]) 
+  ) {
+    $arr9[]= rand(1,33);
+  }
+
+  echo '<pre>' ;
+ print_r($arr9);
+ echo '</pre>';
+
+
+ echo '<pre>' ;
+ echo '10. Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų,
+ kurie yra atsitiktiniai skaičiai nuo 1 iki 100. Jeigu tokio didelio masyvo (ne
+ atskirai mažesnių) pirminių skaičių vidurkis mažesnis už 70, suraskite
+ masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3. Vėl
+ paskaičiuokite masyvo pirminių skaičių vidurkį ir jeigu mažesnis nei 70
+ viską kartokite.
+ ';
+ echo '</pre>';
+
+
+ $arr10 = [];
+ for ($i=0; $i < 10; $i++) { 
+     $arrTmp[] = [];
+     for ($a=0; $a < 10; $a++) { 
+         $arrTmp[] = rand(1, 100);
+     }
+     $arr10[] = $arrTmp;
+ }
+ echo '<pre>' ;
+ print_r($arr10);
+ echo '</pre>';
+
+
+ echo '<pre>' ;
+ echo '11. Sugeneruokate masyvą, kurio ilgis atsitiktinai kinta nuo 10 iki 100.
+ Masyvo reikšmes sudaro atsitiktiniai skaičiai 0-100 ir masyvai. Santykis
+ skaičiuojamas atsitiktinai, bet taip, kad skaičiai sudarytų didesnę dalį nei
+ masyvai. Reikšmių masyvų ilgis nuo 1 iki 5, o reikšmės analogiškos (nuo 50% iki
+ 100% atsitiktiniai skaičiai 0-100, o likusios masyvai) ir t.t. kol visos galutinės
+ reikšmės bus skaičiai ne masyvai. Suskaičiuoti kiek elementų turi masyvas.
+ Suskaičiuoti masyvo elementų (tie kurie ne masyvai) sumą. Suskaičiuoti
+ maksimalų masyvo gylį. Atvaizduokite masyvą grafiškai . Masyvą pavazduokite
+ kaip div elementą, kuris yra display:flex, kurio viduje yra skaičiai. Kiekvienas
+ div elementas turi savo unikalų id ir unikalią background spalvą (spalva pvz
+ nepavaizduota). pvz: <div id=”M1”>10, 46, 67, <div id=”M2”> 89, 45,
+ 89, 34, 90, <div id=”M3”> 84, 97 </div> 90, 56 </div> </div>.
+ ';
+ echo '</pre>';
 
 
 ?>
